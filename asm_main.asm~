@@ -38,7 +38,6 @@ asm_main:
         enter   0,0               ; setup routine
         pusha
 ; *********** Start  Assignment Code *******************
-	; First, this program will print out the initial values of array1
 	mov ebx,0
 	while3:
 	cmp ebx,4
@@ -50,13 +49,13 @@ asm_main:
 		inc ebx
 		jmp while3
 	then3:
-	; Now, the program will call the subprogram arrayScalarMultiplier to multiply the array
+
 	push dword array1
 	push dword [size1]
 	push dword [scalar1]
 	call arrayScalarMultiplier
 	add esp, 12
-	; Finally, the program will print out the new values of array1
+
 	mov ebx,0
 	while2:
 	cmp ebx,4
